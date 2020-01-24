@@ -1,0 +1,165 @@
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 55%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  min-height: 100vh; }
+
+@font-face {
+  src: url("../fonts/Averta_Avto.ttf");
+  font-family: Averta_avto; }
+
+body {
+  font-size: 1.6rem;
+  font-family: Averta_avto;
+  line-height: 1; }
+
+.header {
+  background-color: #fb0;
+  width: 100%;
+  height: 8rem;
+  position: fixed;
+  box-sizing: content-box;
+  border-bottom: 0.5rem solid #222; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      box-sizing: border-box;
+      border-bottom: none; } }
+  .header__part {
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 112rem;
+    width: 100%;
+    margin: 0 auto; }
+    @media only screen and (max-width: 56.25em) {
+      .header__part {
+        justify-content: space-between;
+        padding: 0; } }
+  .header__nav {
+    flex: 0 1 90rem;
+    height: 2.55rem;
+    transition: height .5s; }
+    @media only screen and (max-width: 56.25em) {
+      .header__nav {
+        width: 100vw;
+        height: .5rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #222;
+        overflow: hidden; } }
+  .header__list {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end; }
+    @media only screen and (max-width: 56.25em) {
+      .header__list {
+        flex-direction: column;
+        align-items: center; } }
+  .header__items {
+    display: inline-block;
+    margin-right: 3.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .header__items {
+        margin-right: 0;
+        margin-top: 1rem; }
+        .header__items:last-child {
+          margin-bottom: 1rem; } }
+  .header__link:link, .header__link:visited {
+    line-height: 1.6;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #222;
+    font-size: 2rem;
+    padding: .5rem;
+    transition: all .05s;
+    border-radius: 3px;
+    border: 2px solid transparent; }
+  .header__link.active, .header__link:hover, .header__link:active {
+    border: 2px solid #222; }
+  @media only screen and (max-width: 56.25em) {
+    .header__link:link, .header__link:visited {
+      line-height: 1.25;
+      border: none;
+      color: #fb0;
+      font-weight: bold; }
+    .header__link.active, .header__link:hover, .header__link:active {
+      border: none; } }
+
+.logo {
+  height: 75%; }
+  .logo__box {
+    height: 80%;
+    flex: 0 0 22rem;
+    display: flex;
+    align-items: center; }
+    @media only screen and (max-width: 56.25em) {
+      .logo__box {
+        padding-right: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .logo__box {
+        padding-right: 1rem; } }
+  .logo__link {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+
+.burger {
+  display: none;
+  cursor: pointer;
+  height: 6rem;
+  flex: 0 0 6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .burger {
+      display: inline-block;
+      margin-right: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .burger {
+      margin-right: 1rem; } }
+  .burger__toggled {
+    display: none; }
+  .burger__line, .burger__line::after, .burger__line::before {
+    position: relative;
+    display: block;
+    width: 3rem;
+    height: 4px;
+    background-color: #222; }
+  .burger__line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .burger__line::before, .burger__line::after {
+    content: "";
+    position: absolute;
+    transition: transform .2s; }
+  .burger__line::before {
+    top: 1rem; }
+  .burger__line::after {
+    top: -1rem; }
+  @media only screen and (max-width: 56.25em) {
+    .burger__toggled:checked + .header__nav {
+      height: 18.5rem; }
+    .burger__toggled:checked ~ .burger > .burger__line {
+      background-color: transparent; }
+      .burger__toggled:checked ~ .burger > .burger__line::after, .burger__toggled:checked ~ .burger > .burger__line::before {
+        top: 0; }
+      .burger__toggled:checked ~ .burger > .burger__line::after {
+        transform: rotate(135deg); }
+      .burger__toggled:checked ~ .burger > .burger__line::before {
+        transform: rotate(-135deg); } }
